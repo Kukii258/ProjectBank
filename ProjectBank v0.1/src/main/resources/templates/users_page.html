@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome Back</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/user_page_style.css}">
+</head>
+<body>
+<a class="button-84"  role="button" href="/login">Log out</a>
+
+<p  style="margin: 0 auto;">Welcome <span th:text="${userInfo.name}"></span></p>
+
+<section>
+    <nav>
+        <ul class="menuItems">
+            <li><a th:href="@{/info/{id}(id=${userInfo.id})}" data-item='Info'>Info</a></li>
+            <li><a th:href="@{/balance/{id}(id=${userInfo.id})}" data-item='Balance'>Balance</a></li>
+            <li><a th:href="@{/maketransaction/{id}(id=${userInfo.id})}" data-item='Transfer'>Transfer</a></li>
+            <li><a th:href="@{/contact/{id}(id=${userInfo.id})}" data-item='Contact'>Contact</a></li>
+        </ul>
+    </nav>
+</section>
+
+</body>
+</html>

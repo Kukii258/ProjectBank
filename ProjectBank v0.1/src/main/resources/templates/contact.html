@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/contact_page_style.css}">
+</head>
+<body>
+<p>List of Contacts</p>
+<table class="styled-table">
+    <thead>
+    <tr>
+        <th>Contact List</th>
+        <th>Transfer Money</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="active-row" th:each="contact : ${contacts}">
+        <td th:text="${contact.friend2}"></td>
+        <td><a th:href="@{/maketransactionByEmail/{id}/{id2}(id=${user.id},id2=${contact.getFriend2()})}" class="button-link">Send</a></td>
+    </tr>
+    </tbody>
+</table>
+
+<a class="button-84" th:href="@{/addContact/{id}(id=${user.id})}" role="button">Add Contact</a>
+<footer>
+    <a th:href="@{/users_page/{id}(id=${user.getId()})}">Back to Home Page</a>
+</footer>
+</body>
+</html>

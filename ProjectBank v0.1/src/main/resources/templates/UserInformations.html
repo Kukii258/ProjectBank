@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Profile</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/user_info_style.css}">
+</head>
+<body>
+
+<div class="user-profile">
+    <div class="profile-header">
+        <h2><span th:text="${userInfo.name}"></span> Profile</h2>
+    </div>
+    <div class="profile-info">
+        <div class="info-item">
+            <strong>Full name:</strong> <span th:text="${userInfo.name}"></span>
+        </div>
+        <div class="info-item">
+            <strong>Age:</strong> <span th:text="${userInfo.age}"></span>
+        </div>
+        <div class="info-item">
+            <strong>Email address:</strong> <span th:text="${userInfo.email}"></span>
+        </div>
+        <div class="info-item">
+            <strong>Phone number:</strong> <span th:text="${userInfo.phoneNumber}"></span>
+        </div>
+        <div class="info-item">
+            <strong>Address:</strong> <span th:text="${userInfo.adress}"></span>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <a class="back-button" th:href="@{/users_page/{id}(id=${userInfo.id})}">Back to Home Page</a>
+</footer>
+</body>
+</html>

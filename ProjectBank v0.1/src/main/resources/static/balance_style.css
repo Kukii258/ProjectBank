@@ -1,0 +1,49 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; /* Change to space-between to push footer to the bottom */
+    min-height: 100vh; /* Ensure the body takes at least the full viewport height */
+    overflow: hidden;
+    margin: 0; /* Remove default margin to avoid unwanted space */
+    font-family: Hack, monospace;
+    background: rgb(46,48,87);
+    background: linear-gradient(317deg, rgba(46,48,87,1) 0%, rgba(71,71,86,1) 40%, rgba(255,255,255,1) 100%);
+}
+
+.balance{
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.info {
+    margin-top: 60px;
+    text-align: center;
+    color: #727272;
+
+}
+
+.chart {
+    margin-top: -30px; /* Adjust as needed */
+}
+
+
+footer a {
+    color: #333; /* Set the default color for the text inside the footer */
+    text-decoration: none !important;
+    transition: color 0.3s ease; /* Add transition for smooth color change */
+
+    &:hover {
+        color: #8254ff; /* Change text color on hover */
+    }
+}
+
+footer {
+    padding: 20px;
+    background-color: #DCDCDC;
+    text-align: center;
+    width: 100%;
+    font-family: 'Arial', sans-serif;
+    text-decoration: none;
+    height: 19px;
+}

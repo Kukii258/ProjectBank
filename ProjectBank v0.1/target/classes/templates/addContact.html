@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Transaction</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/user_page_style.css}">
+</head>
+<body>
+<div class="container_transaction">
+    <h1 style="color: #3d3838;">Add Contact</h1>
+    <hr>
+    <form th:action="@{/processAddingContact}" th:object="${contact}" method="POST">
+
+        <input type="hidden" name="friend1" th:value="${contact.getFriend1()}" />
+        <input type="hidden" name="user" th:value="${user.getId()}" />
+
+        <div class="div_input_trans">
+            <input type="email" th:field="*{friend2}" placeholder="Email of Friend" class="input_trans" required>
+            <span th:if="${error != null}" th:text="${error}" class="error-message" style="color: darkred"></span>
+            <button type="submit" class="btn_trans">Send Friend Request</button>
+        </div>
+    </form>
+    <hr>
+</div>
+<footer>
+    <a th:href="@{/users_page/{id}(id=${user.getId()})}">Back to Home Page</a>
+</footer>
+</body>
+</html>

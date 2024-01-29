@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Adding User Informations</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1>Add User</h1>
+    <form action="#" th:action="@{/save}" th:object="${user}" method="POST">
+        <input type="text" th:field="*{name}" placeholder="Name" class="form-control mb-4 col-4">
+        <input type="text" th:field="*{email}" placeholder="Email" class="form-control mb-4 col-4">
+        <input type="text" th:field="*{age}" placeholder="Age" class="form-control mb-4 col-4">
+        <input type="text" th:field="*{adress}" placeholder="Adress" class="form-control mb-4 col-4">
+        <input type="text" th:field="*{phoneNumber}" placeholder="Phone Number" class="form-control mb-4 col-4">
+        <button type="submit" class="btn btn-info col-2">Save</button>
+    </form>
+</div>
+</body>
+</html>

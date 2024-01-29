@@ -1,0 +1,84 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: url(https://picsum.photos/3000/2000/?image=1015);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the body takes at least the full viewport height */
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 25%;
+    height: 100%;
+    background-color: #03a9f4;
+    opacity: 0.8;
+}
+
+.container_transaction {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+    padding: 50px;
+    box-sizing: border-box;
+    margin-top: 20px; /* Adjust as needed */
+}
+
+.container_transaction h1 {
+    color: #777;
+    margin: 0 0 40px;
+    padding: 0;
+}
+
+.div_input_trans {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.input_trans {
+    width: 100%;
+    font-size: 16px;
+    border: none;
+    border-bottom: 2px solid #777;
+    outline: none;
+    padding: 10px;
+    padding-left: 30px;
+    box-sizing: border-box;
+    font-weight: bold;
+    color: #777;
+    margin: 20px 0;
+}
+
+.btn_trans {
+    border: none;
+    cursor: pointer;
+    background-color: #03a9f4;
+    color: #fff;
+    font-weight: bold;
+    transition: 0.5s;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.btn_trans:hover {
+    background-color: #ff4987;
+}
+
+footer {
+    margin-top: auto;
+    padding: 20px;
+    background-color: #03a9f4;
+    text-align: center;
+    color: #fff;
+}

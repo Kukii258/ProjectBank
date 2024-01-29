@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Transaction</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/user_page_style.css}">
+
+    <style>
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        input[type=number] {
+            -moz-appearance:textfield;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="container_transaction">
+    <h1 style="color: #3d3838;">Make Transaction</h1>
+    <hr>
+    <form  th:action="@{/processTransaction}" th:object="${transaction}"  method="POST">
+
+        <input type="hidden" name="id1" th:value="${transaction.id1}" />
+        <input type="hidden" th:if="${error1 != null}" name="error" th:value="${error}" />
+
+        <div class="div_input_trans">
+            <input type="text" th:if="${error1 == null}" th:field="*{email}" placeholder="Email" class="input_trans" required>
+            <input type="text" th:if="${error1 != null}" th:value="${email}" name="email"  class="input_trans" readonly>
+            <span th:if="${error2 != null}" th:text="${error2}" class="error-message" style="color: darkred"></span>
+
+            <input type="number" th:field="*{amount}" placeholder="Amount" class="input_trans" required
+                   style="-moz-appearance: textfield; /* Firefox */"
+                   max="10000" min="1">
+            <button  type="submit" class="btn_trans">Send</button>
+        </div>
+    </form>
+    <hr>
+</div>
+<footer>
+    <a th:href="@{/users_page/{id}(id=${transaction.id1})}">Back to Home Page</a>
+</footer>
+</body>
+</html>
